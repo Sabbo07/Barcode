@@ -1,6 +1,7 @@
-﻿namespace Barcode.Service;
+﻿using Barcode.Entities;
+namespace Barcode.Service;
 
-public class IBarcodeService
+public interface IBarcodeService
 {
-    
+    barcode? GetBarcodeByBarcodeId(string barcodeId);
 }
