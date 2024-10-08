@@ -3,5 +3,6 @@ namespace Barcode.Service;
 
 public interface IBarcodeService
 {
-    barcode? GetBarcodeByBarcodeId(string barcodeId);
+    Prodotto GetBarcodeByBarcodeId(string barcodeId);
+    void UpdateBarcode(string barcodeId, int quantity);
 }

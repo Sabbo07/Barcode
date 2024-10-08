@@ -2,12 +2,12 @@
 
 namespace Barcode.Entities;
 
-public class barcode
+public class Prodotto
 {
     [Key]
     public int ID { get; set; }
-    public string BarcodeId { get; set; }
-    public string BarcodeName { get; set; }
+    public required string BarcodeId { get; set; }
+    public required string BarcodeName { get; set; }
     public int qta  { get; set; }
     
 }
