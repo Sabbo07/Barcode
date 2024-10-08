@@ -3,5 +3,6 @@ namespace Barcode.Repository;
 
 public interface IBarcodeRepository
 {
-    barcode GetBarcode(string barcodeid);
+    Prodotto GetBarcode(string barcodeid);
+    void UpdateBarcodeQuantity(string barcodeId, int quantity);
 }
