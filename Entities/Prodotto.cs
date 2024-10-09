@@ -6,8 +6,8 @@ public class Prodotto
 {
     [Key]
     public int ID { get; set; }
-    public required string BarcodeId { get; set; }
-    public required string BarcodeName { get; set; }
+    public required string Barcode { get; set; }
+    public required string Nome { get; set; }
     public int qta  { get; set; }
     
 }

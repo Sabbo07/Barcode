@@ -1,5 +1,6 @@
 ﻿using Barcode.Repository;
 using Barcode.Entities;
+using Barcode.Entities.DTO;
 namespace Barcode.Service;
 
 public class BarcodeService : IBarcodeService
@@ -20,4 +21,27 @@ public class BarcodeService : IBarcodeService
     { 
         _barcodeRepository.UpdateBarcodeQuantity(barcodeId, quantity);
     }
+    public void AddBarcode(BarcodeDTO request)
+    {
+        // Validate input
+        if (string.IsNullOrWhiteSpace(request.BarcodeId) || request.BarcodeId.Length != 12)
+        {
+            throw new ArgumentException("Il codice deve essere di 12 caratteri");
+        }
+
+        var barcode = new Prodotto
+        {
+            Barcode = request.BarcodeId,
+            Nome  = request.BarcodeName,
+            qta = request.Qta
+            
+        };
+        if(request.Qta < 0)
+        {
+            throw new ArgumentException("La quantità in inserimento del prodotto deve essere maggiore di 0");
+        }
+        
+        _barcodeRepository.AddBarcode(barcode, request.BarcodeId, request.BarcodeName);
+    }
+    
 }

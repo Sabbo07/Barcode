@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Barcode.Service;
 using Barcode.Entities.Request;
+using Barcode.Entities.DTO;
 namespace Barcode.Controller;
 
 [Route("api/[controller]")]
@@ -50,5 +51,23 @@ public class BarcodeController : ControllerBase
             return StatusCode(500, new { Error = "Ops, c'è stato un errore! Riprova ." });
         }
     }
-
+    [HttpPost]
+    public IActionResult AddBarcode([FromBody] BarcodeDTO request)
+    {
+        try
+        {
+            _barcodeService.AddBarcode(request);
+            return CreatedAtAction(nameof(GetBarcodeByBarcodeId), new { barcodeId = request.BarcodeId }, request);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+       /* catch (Exception)
+        {
+            return StatusCode(500, "Errore Non previsto!");
+        }
+        */
+    }
+    
 }
