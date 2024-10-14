@@ -6,7 +6,7 @@ public class DataContext : DbContext
 {
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
     
-    public DbSet<Prodotto> barcodes { set; get; }
+    public DbSet<Prodotto> prodotti { set; get; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

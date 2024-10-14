@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Barcode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20fea0bf665edd43ed2d4a25872700367f324f15")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9549b958005c7bcbc822554edcb116dc1717d32")]
 [assembly: System.Reflection.AssemblyProductAttribute("Barcode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Barcode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
